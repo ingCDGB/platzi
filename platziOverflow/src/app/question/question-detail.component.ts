@@ -5,7 +5,8 @@ import { Question } from './question.model'
 // que archivos va a requerir y utilizar este componente
 @Component({
   selector: 'app-question-detail', //como se llamara en los archivos html
-  templateUrl: './question-detail.component.html' //archivo html a consumir
+  templateUrl: './question-detail.component.html', //archivo html a consumir
+  styleUrls: ['./question-detail.component.css']
 })
 // RECUERDA: avisarle al archivo app.module que será utilizado este componente
 export class QuestionDetailComponent{
@@ -15,5 +16,4 @@ export class QuestionDetailComponent{
   new Date,
   'devicon-apple-original colored'
   );
-
 }
