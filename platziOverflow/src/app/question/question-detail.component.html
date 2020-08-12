@@ -7,7 +7,7 @@
       <h2>{{ question.title }}</h2>
     </mat-card-title>
     <mat-card-subtitle>
-      <small>Carlos D. García B. - {{ question.createdAd }}</small>
+      <small>Carlos D. García B. - {{ question.createdAd | amLocale:'es' | amTimeAgo}}</small>
     </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
