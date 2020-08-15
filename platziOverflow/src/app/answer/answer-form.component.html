@@ -1,0 +1,19 @@
+<!-- al hacer submit del formulario llamar al metodo del typescript-->
+<!-- la referencia se agrega con #{nombre}="ngForm"-->
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <mat-form-field>
+       <!-- <mat-label>Leave a comment</mat-label> -->
+       <!-- NgModel es utilizado para poder consumir 
+            el textarea en el archivo typeScript 
+            es decir en nuestro componente-->
+        <textarea 
+            matInput 
+            placeholder="Respuesta"
+            name="description"
+            ngModel>
+        </textarea> 
+    </mat-form-field> 
+    <button  type="submit" mat-raised-button  color="accent">
+        Responder
+    </button>
+</form>
