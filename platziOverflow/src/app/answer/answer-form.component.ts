@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Answer, User } from './answer.model';
+import { Question } from '../question/question.model';
 
 @Component({
     selector: 'app-answer-form',
@@ -16,7 +18,29 @@ import { NgForm } from '@angular/forms';
 })
 
 export class AnswerFormComponent {
+    /*
+        @Input está en el core de angular 
+        propiedad que debe ser asignada de otro lado
+     */
+    @Input() question: Question;
+    /*
+        Tenemos que pasarle la pregunta a la que hace referencia 
+        esto se hace mediante el componente
+        question-detail.component tiene que indicar al answer-form 
+        que estamos hablando de esta pregunta.
+    */
     onSubmit(form: NgForm){
-        console.log('respuesta: '+form.value.description);
+        const answer = new Answer( 
+             form.value.description, 
+             this.question, 
+             new Date(), 
+             new User("Carlos David","Garcia Bendahan")
+        );
+        //push agrega al final
+        //unshift agrega en primer lugar
+        this.question.answers.unshift(answer);
+        //limpiamos el formulario
+        console.log(answer)
+        form.reset(); 
     }
 }

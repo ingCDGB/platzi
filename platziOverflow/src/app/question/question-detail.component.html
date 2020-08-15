@@ -18,16 +18,23 @@
   <h3>Respuestas</h3>
   <!-- Angular nos permite agregar codigo HTML para hacer logica-->
   <ul class="answers-list" *ngIf="question.answers.length > 0"> 
-      <li>
+      <!--
+        ngFor permite crear ciclos
+      -->
+      <li *ngFor="let answer of question.answers">
         <h5>
-          Paula Becerra
-          <small>Hace unos segundos</small>
+          {{ answer.user.firstName }} {{ answer.user.lastName }}
+          <small>{{ answer.createdAd | amLocale:'es' | amTimeAgo}}</small>
         </h5>
         <p class="description"> 
-          Yo tengo la respuesta!!!
+          {{ answer.description }}
         </p>
       </li>
   </ul>
   <p *ngIf="question.answers.length === 0">Sé el primero en responder!!!</p>
-  <app-answer-form class="answer-form"></app-answer-form>
+  <!-- 
+    asignamos  al atributo question del formulario le asignar el valor que tiene question 
+  del question-detail [atributo]="valor"
+  -->
+  <app-answer-form [question]="question" class="answer-form"></app-answer-form>
 </div>
