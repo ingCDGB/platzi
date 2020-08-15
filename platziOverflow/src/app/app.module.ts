@@ -15,6 +15,7 @@ import 'hammerjs';
 //Estos deben estar en declarations
 import { QuestionDetailComponent } from './question/question-detail.component';
 import { AnswerFormComponent } from './answer/answer-form.component';
+import { SigninScreenComponent } from './auth/signin-screen.component';
 
 import { MomentModule } from 'angular2-moment';
 
@@ -22,7 +23,8 @@ import { MomentModule } from 'angular2-moment';
   declarations: [
     AppComponent,
     QuestionDetailComponent,
-    AnswerFormComponent
+    AnswerFormComponent,
+    SigninScreenComponent
   ],
   imports: [
     BrowserModule,
