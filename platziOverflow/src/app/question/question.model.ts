@@ -1,6 +1,7 @@
 import { Answer } from '../answer/answer.model'
 
 export class Question{
+  _id?: string;
   title: string;
   description: string;
   createdAd?: Date; //el ? hace referencia a ser opcional
@@ -9,6 +10,7 @@ export class Question{
 
 
   constructor(title: string, description: string, createdAd?: Date,  icon?: string){
+    this._id = '1';
     this.title  = title;
     this.description = description;
     this.createdAd = createdAd;

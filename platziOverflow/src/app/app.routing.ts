@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { QuestionListComponent } from './question/question-list.component';
 import { SigninScreenComponent } from './auth/signin-screen.component';
 import { RegistryScreenComponent } from './registry/registry-screen.component';
+import { QUESTION_ROUTES } from './question/question.routing';
 /**
  * Agregamos nuestras rutas
  * Cada una de ellas será un objeto JavaScript
@@ -15,7 +16,8 @@ const APP_ROUTES: Routes = [
      */
     { path: '', component: QuestionListComponent, pathMatch: 'full' }, 
     { path: 'signin', component: SigninScreenComponent },
-    { path: 'signup', component: RegistryScreenComponent }
+    { path: 'signup', component: RegistryScreenComponent },
+    { path: 'questions', children: QUESTION_ROUTES }
 ];
 
 //Nuestro sistema de ruta para nuestra aplicación
