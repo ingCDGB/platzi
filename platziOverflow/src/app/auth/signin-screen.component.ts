@@ -37,8 +37,6 @@ export class SigninScreenComponent implements OnInit{
         if(this.signinForm.valid){
             const { email,password } = this.signinForm.value;
             
-            console.log(email);
-            console.log(password);
             const user = new User(email,password,"carlos","garcia");
 
             console.log(user);

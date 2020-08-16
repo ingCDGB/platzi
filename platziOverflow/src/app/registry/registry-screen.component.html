@@ -1,0 +1,41 @@
+<!-- 
+    Realizo el binding para:
+    Reactive Forms 
+    ngForms
+-->
+<form [formGroup]="registryForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <input 
+        type="text"
+        matInput
+        placeholder="Nombre completo"
+        id="firstName"
+        formControlName="firstName">
+    </mat-form-field>
+    <mat-form-field>
+        <input 
+        type="text"
+        matInput
+        placeholder="Apellido completo"
+        id="lastName"
+        formControlName="lastName">
+    </mat-form-field>
+    <mat-form-field>
+        <input
+         matInput 
+         placeholder="Correo electrónico" 
+         id="email" 
+         formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+        <input
+         matInput 
+         type="password"
+         placeholder="Contraseña" 
+         id="password" 
+         formControlName="password">
+    </mat-form-field>
+    <button  type="submit" mat-raised-button  color="accent">
+        Registrarse
+    </button>
+</form>
