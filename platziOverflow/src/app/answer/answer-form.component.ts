@@ -35,7 +35,7 @@ export class AnswerFormComponent {
              form.value.description, 
              this.question, 
              new Date(), 
-             new User("Carlos David","Garcia Bendahan")
+             new User(null,null,"Carlos David","Garcia Bendahan")
         );
         //push agrega al final
         //unshift agrega en primer lugar

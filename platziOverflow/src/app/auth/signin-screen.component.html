@@ -1,0 +1,25 @@
+<!-- REALIZAR EL BINDING-->
+<form [formGroup]="signinForm" (ngSubmit)="onSubmit()"> <!-- tanto el formGroup como el ngSubmit son binding-->
+    <!--   
+        formControlName nos permite indicar que utilizará REACTIVE FORMS
+        ES DECIR enlaza los datos definidos en la clase
+     -->
+    <mat-form-field>
+        <input
+         matInput 
+         placeholder="Correo electrónico" 
+         id="email" 
+         formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+        <input
+         matInput 
+         type="password"
+         placeholder="Contraseña" 
+         id="password" 
+         formControlName="password">
+    </mat-form-field>
+    <button  type="submit" mat-raised-button  color="accent">
+        Iniciar sesión
+    </button>
+</form>
