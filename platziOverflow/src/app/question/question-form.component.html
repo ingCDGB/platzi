@@ -1,1 +1,30 @@
-hola
+<!-- 
+    En este caso no utilizamos Reactive forms
+    Solamente los formularios de Angular
+-->
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <!--    
+        Para generar el BINDING entre nuestro
+        componente de ts y el template debemos 
+        utilizar el ngModel
+    -->
+    <mat-form-field>
+        <input 
+        type="text"
+        matInput
+        placeholder="Título"
+        name="title"
+        ngModel>
+    </mat-form-field>
+    <mat-form-field>
+        <input 
+        type="text"
+        matInput
+        placeholder="Descripción"
+        name="description"
+        ngModel>
+    </mat-form-field>
+    <button type="submit" mat-raised-button  color="accent" >
+        Enviar
+    </button>
+</form>
