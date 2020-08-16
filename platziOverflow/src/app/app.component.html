@@ -1,12 +1,17 @@
 <mat-toolbar color="primary">
-    <span>PlatziOverflow</span>
+<!--
+    Agregaremos dos enlaces 
+    1) en PlatziOverflow para ir al home
+    2) En el icono del usuario para ir a signin
+-->
+    <span [routerLink]="['/']">PlatziOverflow</span>
     <span class="space"></span>
-    <mat-icon>account_circle</mat-icon>
+    <mat-icon [routerLink]="['/signin']"> account_circle</mat-icon>
 </mat-toolbar>
 
-<!-- NUESTRO SELECTOR QUE DECLARAMOS EN EL COMPONENT
-<app-question-detail></app-question-detail> 
-<app-signin-screen></app-signin-screen> 
-<app-registry-screen></app-registry-screen> 
-<app-question-list></app-question-list> -->
-<app-question-form></app-question-form>
+<!-- 
+    Crearemos nuestro routing 
+    Decide tú que pantalla mostrar 
+    según las rutas configuradas
+-->
+<router-outlet></router-outlet>
