@@ -27,14 +27,15 @@ export class QuestionFormComponent {
     icons: Object[] = icons;
 
     getIconVersion(icon: any){
-        let version;
+        let version = 'devicon-'+icon.name+'-';
         if(icon.versions.font.includes('plain-wordmark')){
-            version = 'plain-wordmark';
+            version += 'plain-wordmark';
         }else{
             if(icon.versions.font.length !== 0 && icon.versions.font[0] !== "" ){
-                version = icon.versions.font[0];
+                version += icon.versions.font[0];
             }else{
-                version = 'none'
+                //version = icon.versions.svg[0];
+                version = 'material-icons';
             }
         }
         return version;
@@ -44,7 +45,8 @@ export class QuestionFormComponent {
         const q = new Question(
             form.value.title,
             form.value.description,
-            new Date()
+            new Date(),
+            form.value.icon
         );
 
         console.log(q);

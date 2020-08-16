@@ -508,7 +508,7 @@ export default [
       'tags': ['testing'],
       'versions': {
         'svg': ['plain', 'plain-wordmark'],
-        'font': ['plain', 'plain-wordmark']
+        'font': []
       }
     },
     {
@@ -604,7 +604,7 @@ export default [
       'tags': ['testing'],
       'versions': {
         'svg': ['plain'],
-        'font': ['plain']
+        'font': ['']
       }
     },
     {

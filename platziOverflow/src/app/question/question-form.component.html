@@ -26,10 +26,24 @@
     </mat-form-field>
 
     <mat-grid-list cols="3" rowHeight="3:2">
-        <mat-grid-tile *ngFor="let icon of icons"> 
-            <i *ngIf=" getIconVersion(icon) !== 'none' " mat-list-icon class="devicon-{{ icon.name }}-{{ getIconVersion(icon) }}"></i>
-            <i *ngIf=" getIconVersion(icon) == 'none' " mat-list-icon class="material-icons">close</i>
-        </mat-grid-tile>
+        <!--
+            con [ngModel] hacemos el binding para nuestros 
+            radio button
+        -->
+        <mat-radio-group [ngModel] name="icon">
+            <mat-grid-tile> 
+                <mat-radio-button value="none">
+                    <i mat-list-icon class="material-icons">help</i>
+                </mat-radio-button>
+            </mat-grid-tile>
+    
+            <mat-grid-tile *ngFor="let icon of icons"> 
+                <mat-radio-button value="{{ getIconVersion(icon) }}">
+                    <i *ngIf="getIconVersion(icon) !== 'close'" mat-list-icon class="{{ getIconVersion(icon) }}"></i>
+                    <i *ngIf="getIconVersion(icon) === 'material-icons'" mat-list-icon class="{{ getIconVersion(icon) }} link-off">link_off</i>
+                </mat-radio-button>
+            </mat-grid-tile>
+        </mat-radio-group>
     </mat-grid-list>
     
         <button type="submit" mat-raised-button  color="accent" >
