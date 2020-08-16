@@ -4,7 +4,12 @@ import { User } from '../auth/user.model';
 
 @Component({
     selector: 'app-registry-screen',
-    templateUrl: './registry-screen.component.html'
+    templateUrl: './registry-screen.component.html',
+    styles: [`
+        p{
+            text-align: center;
+        }
+    `]
 })
 
 export class RegistryScreenComponent{
