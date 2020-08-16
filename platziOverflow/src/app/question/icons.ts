@@ -1023,4 +1023,4 @@ export default [
         'font': ['plain', 'plain-wordmark']
       }
     }
-  ]
+  ];
